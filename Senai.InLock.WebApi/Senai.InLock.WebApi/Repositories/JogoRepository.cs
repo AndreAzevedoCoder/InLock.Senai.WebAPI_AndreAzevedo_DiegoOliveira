@@ -9,6 +9,7 @@ namespace Senai.InLock.WebApi.Repositories
 {
     public class JogoRepository : IJogoRepository
     {
+        
         public List<JogoDomain> Listar()
         {
 
