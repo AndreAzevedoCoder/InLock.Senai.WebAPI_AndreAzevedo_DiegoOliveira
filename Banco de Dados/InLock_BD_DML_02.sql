@@ -19,3 +19,7 @@ INSERT INTO TBL_JOGOS (NOME_JOGO, DESCRICAO, DATA_LANCAMENTO, VALOR, ID_ESTUDIO)
 VALUES		('Diablo 3' , 'É um jogo que contém bastante ação e é viciante, seja você um novato ou um fã' , '15-05-2001' , 99.00 , 2)
 			,('Red Dead Redemption II' , 'Jogo eletrônico de ação-aventura western' , '26-10-2018' , 120.00 , 1)
 GO
+
+INSERT INTO TBL_JOGOS (NOME_JOGO, DESCRICAO, DATA_LANCAMENTO, VALOR, ID_ESTUDIO)
+VALUES		('GTA V' , 'Um dos melhores jogos de mundo aberto já criado' , '11-05-2001' , 259.00 , 1)
+GO
