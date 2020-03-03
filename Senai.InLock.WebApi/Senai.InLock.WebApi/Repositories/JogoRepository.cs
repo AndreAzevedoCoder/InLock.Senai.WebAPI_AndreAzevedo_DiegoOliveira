@@ -18,6 +18,10 @@ namespace Senai.InLock.WebApi.Repositories
 
             using (SqlConnection connection = new SqlConnection(StringConexaoDiegoSala))
             {
+<<<<<<< HEAD
+
+            }
+=======
                 string select = "EXEC SP_ListarTodosJogos;";
 
                 using (SqlCommand command = new SqlCommand(select, connection))
@@ -75,6 +79,7 @@ namespace Senai.InLock.WebApi.Repositories
                 }
             }
             return jogos;
+>>>>>>> master
         }
     }
 }

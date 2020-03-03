@@ -11,6 +11,13 @@ namespace Senai.InLock.WebApi.Interfaces
     /// </summary>
     interface IJogoRepository
     {
+<<<<<<< HEAD
+<<<<<<< HEAD
+        List<JogoDomain> Listar();
+        void Cadastrar(JogoDomain jogo);
+=======
+=======
+>>>>>>> master
         /// <summary>
         /// Lista todos os jogos cadastrados
         /// </summary>
@@ -40,5 +47,9 @@ namespace Senai.InLock.WebApi.Interfaces
         /// <param name="Id"></param>
         /// <returns></returns>
         JogoDomain CadastrarJogo(string Nome, string Descricao, DateTime DataLancamento, float Valor, int Id);
+<<<<<<< HEAD
+>>>>>>> 378b783d379ff2a6503f6de806906786e9316728
+=======
+>>>>>>> master
     }
 }
