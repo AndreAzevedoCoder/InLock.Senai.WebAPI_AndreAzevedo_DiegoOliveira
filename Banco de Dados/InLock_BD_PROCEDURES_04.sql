@@ -78,3 +78,19 @@ AS
 			WHERE ID_ESTUDIO = @Id
 	END
 GO
+
+CREATE PROC SP_CadastrarJogo @Nome VARCHAR(255), @Descricao TEXT, @Data_Lancamento DATE, @Valor FLOAT, @Id_Estudio INT
+AS
+	BEGIN
+		INSERT INTO TBL_JOGOS (NOME_JOGO, DESCRICAO, DATA_LANCAMENTO, VALOR, ID_ESTUDIO)
+		VALUES (@Nome, @Descricao, @Data_Lancamento, @Valor, @Id_Estudio)
+	END
+GO
+
+ CREATE PROC SP_CadastrarEstudio @Nome VARCHAR(255)
+ AS
+	BEGIN
+			INSERT INTO TBL_ESTUDIOS (NOME_ESTUDIO)
+			VALUES (@Nome)
+	END
+GO

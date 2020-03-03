@@ -18,10 +18,7 @@ namespace Senai.InLock.WebApi.Repositories
 
             using (SqlConnection connection = new SqlConnection(StringConexaoDiegoSala))
             {
-<<<<<<< HEAD
 
-            }
-=======
                 string select = "EXEC SP_ListarTodosJogos;";
 
                 using (SqlCommand command = new SqlCommand(select, connection))
@@ -79,7 +76,38 @@ namespace Senai.InLock.WebApi.Repositories
                 }
             }
             return jogos;
->>>>>>> master
+        }
+
+        public void CadastrarJogo(JogoDomain Jogo)
+        {
+            using (SqlConnection connection = new SqlConnection(StringConexaoDiegoSala))
+            {
+                string insert = "SP_CadastrarJogo @Nome, @Descricao, @Data_Lancamento, @Valor, @Id_Estudio;";
+                using (SqlCommand command = new SqlCommand(insert, connection))
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@Nome", Jogo.NOME_JOGO);
+                    command.Parameters.AddWithValue("@Descricao", Jogo.DESCRICAO);
+                    command.Parameters.AddWithValue("@Data_Lancamento", Jogo.DATA_LANCAMENTO);
+                    command.Parameters.AddWithValue("@Valor", Jogo.VALOR);
+                    command.Parameters.AddWithValue("@Id_Estudio", Jogo.ID_ESTUDIO);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void CadastrarEstudio(EstudioDomain Estudio)
+        {
+            using (SqlConnection connection = new SqlConnection(StringConexaoDiegoSala))
+            {
+                string insert = "EXEC SP_CadastrarEstudio @Nome;";
+                using (SqlCommand command = new SqlCommand(insert, connection))
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@Nome", Estudio.NOME_ESTUDIO);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

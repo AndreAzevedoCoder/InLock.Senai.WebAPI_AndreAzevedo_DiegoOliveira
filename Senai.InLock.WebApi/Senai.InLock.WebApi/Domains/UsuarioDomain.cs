@@ -20,7 +20,6 @@ namespace Senai.InLock.WebApi.Domains
         [StringLength(20, MinimumLength = 3, ErrorMessage = "O campo precisa ter no mínimo 3 caracteres")]
         public string SENHA { get; set; }
 
-        public string PERMISSAO { get; set; }
         public int ID_TipoUsuario { get; set; }
     }
 }
