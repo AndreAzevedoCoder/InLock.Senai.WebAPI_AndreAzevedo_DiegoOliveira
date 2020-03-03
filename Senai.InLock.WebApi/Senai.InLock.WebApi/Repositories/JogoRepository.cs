@@ -18,8 +18,68 @@ namespace Senai.InLock.WebApi.Repositories
 
             using (SqlConnection connection = new SqlConnection(StringConexaoDiegoSala))
             {
+<<<<<<< HEAD
 
             }
+=======
+                string select = "EXEC SP_ListarTodosJogos;";
+
+                using (SqlCommand command = new SqlCommand(select, connection))
+                {
+                    connection.Open();
+                    SqlDataReader reader;
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        JogoDomain jogo = new JogoDomain
+                        {
+                            ID_JOGO = Convert.ToInt32(reader["ID_JOGO"]),
+                            NOME_JOGO = (reader["NOME_JOGO"]).ToString(),
+                            DESCRICAO = (reader["DESCICAO"]).ToString(),
+                            DATA_LANCAMENTO = Convert.ToDateTime(reader["DATA_LANCAMENTO"]),
+                            VALOR = float.Parse(reader["VALOR"].ToString()),
+                            ID_ESTUDIO = Convert.ToInt32(reader["ID_ESTUDIO"])
+                        };
+                        jogos.Add(jogo);
+                    }
+                }
+            }
+            return jogos;
+        }
+
+        public List<JogoDomain> ListarJogosEstudio()
+        {
+            List<JogoDomain> jogos = new List<JogoDomain>();
+
+            using (SqlConnection connection = new SqlConnection(StringConexaoDiegoSala))
+            {
+                string select = "EXEC SP_ListarJogosEstudios;";
+
+                using (SqlCommand command = new SqlCommand(select, connection))
+                {
+                    connection.Open();
+                    SqlDataReader reader;
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        JogoDomain jogo = new JogoDomain
+                        {
+                            ID_JOGO = Convert.ToInt32(reader["ID_JOGO"]),
+                            NOME_JOGO = (reader["NOME_JOGO"]).ToString(),
+                            DESCRICAO = (reader["DESCICAO"]).ToString(),
+                            DATA_LANCAMENTO = Convert.ToDateTime(reader["DATA_LANCAMENTO"]),
+                            VALOR = float.Parse(reader["VALOR"].ToString()),
+                            ID_ESTUDIO = Convert.ToInt32(reader["ID_ESTUDIO"]),
+                            NOME_ESTUDIO = (reader["NOME_ESTUDIO"]).ToString()
+                        };
+                        jogos.Add(jogo);
+                    }
+                }
+            }
+            return jogos;
+>>>>>>> master
         }
     }
 }
