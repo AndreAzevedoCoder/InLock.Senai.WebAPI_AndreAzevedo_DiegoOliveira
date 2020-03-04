@@ -15,7 +15,7 @@ namespace Senai.InLock.WebApi.Interfaces
         /// Lista Todos os usuários cadastrados
         /// </summary>
         /// <returns></returns>
-        List<UsuarioDomain> ListarTodosUsuarios();
+        //List<UsuarioDomain> ListarTodosUsuarios();
 
         /// <summary>
         /// Busca o usuário cadastrado com determinado email e senha

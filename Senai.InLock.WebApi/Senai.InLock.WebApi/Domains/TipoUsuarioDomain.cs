@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Senai.InLock.WebApi.Domains
 {
+    /// <summary>
+    /// Domain da tabela de Tipos de Usuários
+    /// </summary>
     public class TipoUsuarioDomain
     {
         public int ID_TipoUsuario { get; set; }

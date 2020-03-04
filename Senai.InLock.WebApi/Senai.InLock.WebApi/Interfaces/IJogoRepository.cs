@@ -12,12 +12,6 @@ namespace Senai.InLock.WebApi.Interfaces
     interface IJogoRepository
     {
         /// <summary>
-        /// Lista todos os jogos cadastrados
-        /// </summary>
-        /// <returns></returns>
-        List<JogoDomain> ListarTodosJogos();
-
-        /// <summary>
         /// Lista todos os jogos e seus respectivos estúdios
         /// </summary>
         /// <returns></returns>

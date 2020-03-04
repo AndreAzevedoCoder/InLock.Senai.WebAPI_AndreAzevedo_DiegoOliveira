@@ -28,6 +28,32 @@ namespace Senai.Peoples.WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Senai.InLock.WebApi", Version = "v1" });
             });
+
+            services
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = "JwtBearer";
+                    options.DefaultChallengeScheme = "JwtBearer";
+                })
+                .AddJwtBearer("JwtBearer", options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+
+                        ValidateAudience = true,
+
+                        ValidateLifetime = true,
+
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("jogos-chave-autenticacao")),
+
+                        ClockSkew = TimeSpan.FromMinutes(30),
+
+                        ValidIssuer = "Senai.InLock.WebApi",
+
+                        ValidAudience = "Senai.InLock.WebApi"
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

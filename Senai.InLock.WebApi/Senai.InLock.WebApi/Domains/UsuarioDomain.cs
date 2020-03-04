@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Senai.InLock.WebApi.Domains
 {
+    /// <summary>
+    /// Domain da tabela de Usuários
+    /// </summary>
     public class UsuarioDomain
     {
-        public string ID_USUARIO { get; set; }
+        public int ID_USUARIO { get; set; }
         public string APELIDO { get; set; }
 
         [Required(ErrorMessage = "Informe o Email")]
@@ -21,5 +24,6 @@ namespace Senai.InLock.WebApi.Domains
         public string SENHA { get; set; }
 
         public int ID_TipoUsuario { get; set; }
+        public string NOME_TIPO { get; set; }
     }
 }
