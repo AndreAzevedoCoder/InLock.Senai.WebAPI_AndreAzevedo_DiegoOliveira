@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.InLock.WebApi.Domains;
 using Senai.InLock.WebApi.Interfaces;
@@ -23,12 +24,14 @@ namespace Senai.InLock.WebApi.Controllers
             _jogoRepository = new JogoRepository();
         }
 
+        [Authorize]
         [HttpGet("allGames")]
         public IActionResult ListarJogosEstudios()
         {
             return StatusCode(200, _jogoRepository.ListarJogosEstudio());
         }
 
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [HttpPost("newGame")]
         public IActionResult CadstrarJogo(JogoDomain Jogo)
@@ -37,6 +40,7 @@ namespace Senai.InLock.WebApi.Controllers
             return StatusCode(201);
         }
 
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [HttpPost("newStudio")]
         public IActionResult CadastrarEstudio(EstudioDomain Estudio)

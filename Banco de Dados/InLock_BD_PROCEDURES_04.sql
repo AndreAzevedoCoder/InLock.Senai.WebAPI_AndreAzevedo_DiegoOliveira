@@ -49,13 +49,11 @@ GO
 CREATE PROC SP_BuscarPorEmailSenha @Email VARCHAR(255), @Senha VARCHAR(255)
 AS
 	BEGIN
-			SELECT	ID_USUARIO						AS 'CÓDIGO DO USUÁRIO'
-					,APELIDO						AS 'NICKNAME'
-					,EMAIL							AS 'EMAIL DO USUÁRIO'
-					,NOME_TIPO						AS 'TIPO DO USUÁRIO'
-					,TBL_USUARIOS.ID_TipoUsuario	AS 'CÓDIGO DO TIPO'
+			SELECT	ID_USUARIO
+					,EMAIL
+					,SENHA
+					,ID_TipoUsuario
 			FROM TBL_USUARIOS
-			INNER JOIN TBL_TiposUsuario ON TBL_USUARIOS.ID_TipoUsuario = TBL_TiposUsuario.ID_TipoUsuario
 			WHERE EMAIL = @Email AND SENHA = @Senha
 	END
 GO

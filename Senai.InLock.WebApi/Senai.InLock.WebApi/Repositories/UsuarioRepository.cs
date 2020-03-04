@@ -32,11 +32,10 @@ namespace Senai.InLock.WebApi.Repositories
                         UsuarioDomain Usuario = new UsuarioDomain();
                         while(reader.Read())
                         {
-                            Usuario.ID_USUARIO = Convert.ToInt32(reader["CÓDIGO DO USUÁRIO"]);
-                            Usuario.APELIDO = (reader["NICKNAME"]).ToString();
-                            Usuario.EMAIL = (reader["EMAIL DO USUÁRIO"]).ToString();
-                            Usuario.NOME_TIPO = (reader["TIPO DO USUÁRIO"]).ToString();
-                            Usuario.ID_TipoUsuario = Convert.ToInt32(reader["CÓDIGO DO TIPO"]);
+                            Usuario.ID_USUARIO = Convert.ToInt32(reader["ID_USUARIO"]);
+                            Usuario.EMAIL = (reader["EMAIL"]).ToString();
+                            Usuario.SENHA = (reader["SENHA"]).ToString();
+                            Usuario.ID_TipoUsuario = Convert.ToInt32(reader["ID_TipoUsuario"]);
                         }
                         return Usuario;
                     } else

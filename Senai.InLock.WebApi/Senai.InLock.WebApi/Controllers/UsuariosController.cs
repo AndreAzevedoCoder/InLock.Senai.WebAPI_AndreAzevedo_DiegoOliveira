@@ -26,9 +26,15 @@ namespace Senai.InLock.WebApi.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
-        [HttpPost]
+        [HttpPost("Login")]
         public IActionResult Login(UsuarioDomain Login)
         {
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             UsuarioDomain UsuarioBuscado = _usuarioRepository.BuscarUsuarioPorEmailSenha(Login.EMAIL, Login.SENHA);
             if (UsuarioBuscado == null)
             {
